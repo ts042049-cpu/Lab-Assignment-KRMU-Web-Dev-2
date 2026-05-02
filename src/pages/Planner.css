@@ -1,0 +1,301 @@
+.planner {
+  padding: 48px 24px 80px;
+}
+
+.planner-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.planner-form {
+  padding: 32px;
+}
+
+.planner-form h2 { font-size: 26px; margin-bottom: 24px; }
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+}
+
+.input-error { border-color: #DC2626 !important; }
+
+.error-msg {
+  color: #DC2626;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Budget Calc */
+.budget-calc {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: fit-content;
+}
+
+.budget-calc h3 { font-size: 20px; }
+.calc-sub { color: var(--text-muted); font-size: 13px; margin-top: -6px; }
+
+.budget-calc select,
+.budget-calc input {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.budget-calc select:focus,
+.budget-calc input:focus { border-color: var(--primary); }
+
+.calc-result {
+  margin-top: 8px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.calc-row:last-child { border-bottom: none; }
+.calc-divider { height: 1px; background: var(--primary); }
+.calc-row.total { font-weight: 700; color: var(--text); }
+.calc-row.surplus { color: #16A34A; font-weight: 600; }
+.calc-row.deficit { color: #DC2626; font-weight: 600; }
+
+/* Trips */
+.trips-section h2 { font-size: 28px; margin-bottom: 20px; }
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.trip-card {
+  padding: 24px;
+}
+
+.trip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.trip-header h3 { font-size: 18px; margin-bottom: 4px; }
+
+.trip-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.trip-notes {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding: 10px;
+  background: rgba(29,158,117,0.05);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+}
+
+.trip-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.empty-state {
+  padding: 64px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-state span { font-size: 48px; display: block; margin-bottom: 12px; }
+
+@media (max-width: 900px) {
+  .planner-layout { grid-template-columns: 1fr; }
+  .trips-grid { grid-template-columns: 1fr; }
+}
+
+
+.trip-route{
+ color:var(--primary);
+ font-weight:700;
+}
+/* ── Transport Tabs ───────────────────────────────────────────────────────────*/
+.transport-tabs {
+  margin-top: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.transport-tab-btns {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.transport-tab-btn {
+  padding: 6px 18px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.transport-tab-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.transport-tab-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.transport-panel {
+  animation: fadeIn 0.18s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.transport-loading {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.transport-error {
+  font-size: 13px;
+  color: #DC2626;
+  background: rgba(220,38,38,0.06);
+  border-left: 3px solid #DC2626;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+
+/* ── Flight table ─────────────────────────────────────────────────────────────*/
+.flight-table-wrap { overflow-x: auto; }
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.flight-table th {
+  font-size: 11px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  border-bottom: 1.5px solid var(--border);
+  text-align: left;
+}
+
+.flight-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.flight-table tr:last-child td { border-bottom: none; }
+.flight-table tr:hover td { background: rgba(29,158,117,0.04); }
+
+.flight-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.flight-status--active    { background: rgba(22,163,74,0.12);  color: #16A34A; }
+.flight-status--scheduled { background: rgba(59,130,246,0.12); color: #2563EB; }
+.flight-status--landed    { background: rgba(100,116,139,0.12);color: #64748B; }
+.flight-status--cancelled { background: rgba(220,38,38,0.12);  color: #DC2626; }
+.flight-status--diverted  { background: rgba(234,179,8,0.12);  color: #CA8A04; }
+
+/* ── Road result ──────────────────────────────────────────────────────────────*/
+.road-result {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.road-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.road-row:last-child { border-bottom: none; }
+
+.road-label { color: var(--text-muted); font-weight: 600; }
+.road-val   { color: var(--text); font-weight: 700; }

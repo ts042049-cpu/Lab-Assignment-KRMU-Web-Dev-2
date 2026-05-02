@@ -1,0 +1,111 @@
+.dashboard {
+  padding: 48px 24px 80px;
+}
+
+.dash-header { margin-bottom: 32px; }
+.dash-header h2 { font-size: 36px; }
+.dash-header p { color: var(--text-muted); margin-top: 6px; font-size: 16px; }
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dash-stat {
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.dash-stat:hover { transform: translateY(-3px); }
+
+.dash-stat-icon { font-size: 28px; display: block; margin-bottom: 10px; }
+.dash-stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.dash-stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+
+.dash-charts {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.chart-card {
+  padding: 28px;
+}
+
+.chart-card h3 { font-size: 20px; margin-bottom: 4px; }
+.chart-sub { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+
+.pie-wrapper {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.no-data {
+  padding: 80px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.no-data span { font-size: 48px; display: block; margin-bottom: 12px; }
+.no-data h3 { margin-bottom: 8px; }
+.no-data p { color: var(--text-muted); }
+
+.dash-table {
+  padding: 28px;
+  overflow-x: auto;
+}
+
+.dash-table h3 { font-size: 20px; margin-bottom: 20px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:hover td { background: rgba(29,158,117,0.04); }
+
+.notes-cell {
+  max-width: 200px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1024px) {
+  .dash-stats { grid-template-columns: repeat(3, 1fr); }
+  .dash-charts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .dash-stats { grid-template-columns: repeat(2, 1fr); }
+}

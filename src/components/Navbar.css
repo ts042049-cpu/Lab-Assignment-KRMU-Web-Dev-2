@@ -1,0 +1,107 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  z-index: 100;
+  background: var(--bg-nav);
+  border-right: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition: background 0.3s, border 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px 16px 24px;
+  height: 100%;
+  gap: 0;
+}
+
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 36px;
+  padding: 0 6px;
+}
+
+.navbar-logo span.logo-text span {
+  color: var(--accent);
+}
+
+.logo-icon {
+  font-size: 26px;
+}
+
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.nav-link:hover {
+  background: rgba(29, 158, 117, 0.08);
+  color: var(--primary);
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+.dark-toggle {
+  margin-top: auto;
+  align-self: flex-start;
+  margin-left: 6px;
+  background: var(--border);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dark-toggle:hover {
+  transform: rotate(20deg);
+  background: rgba(29, 158, 117, 0.15);
+}
+
+.app-content {
+  margin-left: 150px;
+}
